@@ -26,30 +26,22 @@ public class UserController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @GetMapping("/welcome")
-    public String welcome() {
-        return "Welcome this endpoint is not secure";
-    }
 
     @PostMapping("/addNewUser")
     public UserInfo addNewUser(@RequestBody UserInfo userInfo) {
-        return service.addUser(userInfo);
-    }
-
-    @GetMapping("/api/userProfile")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    public String userProfile() {
-        return "Welcome to User Profile";
-    }
-
-    @GetMapping("/api/adminProfile")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    public String adminProfile() {
-        return "Welcome to Admin Profile";
+        /*
+         * This API works like a registration function
+         * Therefore, It is permitted to all without authentication
+         */
+    	return service.addUser(userInfo);
     }
 
     @PostMapping("/generateToken")
     public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
+    	/*
+         * This API is for authentication
+         * If user is authenticated the output of this API is a JWT Token
+         */
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
         if (authentication.isAuthenticated()) {
             return jwtService.generateToken(authRequest.getUsername());

@@ -128,4 +128,17 @@ public class BookController {
     	}
         
     }
+    
+    @GetMapping("/api/getAllBorrowing")
+    
+    public ResponseEntity<?> getAllBorrowing(@RequestHeader HashMap<String,String> headers) {
+    	
+    	try {
+    		
+    		return ResponseEntity.ok(bookService.getAllBorrowing());
+    	}catch(Exception e) {
+    		return ResponseEntity.internalServerError().body("Database Error");
+    	}
+        
+    }
 }

@@ -53,4 +53,9 @@ public class BookService {
 		
 		return borrowingRepository.findById(id).orElse(null);
 	}
+	
+	public List<Borrowing> getAllBorrowing() {
+		
+		return borrowingRepository.findAll();
+	}
 }
