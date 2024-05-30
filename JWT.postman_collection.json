@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "0edd32c6-0263-4277-bf33-93d7dbc4dfb9",
+		"name": "JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16905547"
+	},
+	"item": [
+		{
+			"name": "addNewUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"jalal\",\r\n\"password\":\"123456\",\r\n\"email\":\"j@j.com\",\r\n\"role\":\"ROLE_USER\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/addNewUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"addNewUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewBook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxhbG0iLCJpYXQiOjE3MTcwOTQwOTYsImV4cCI6MTcxNzA5NTg5Nn0.IyczKI74poBmZ32rQbU48-9Psw6FZN3EMkwpwLDb5J4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"auther\":\"John Doe\",\r\n\"title\":\"Generative AI\",\r\n\"isbn\":\"ESBN123456599\",\r\n\"year\":\"2023\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/api/addNewBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"api",
+						"addNewBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewBorrowing",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxhbG0iLCJpYXQiOjE3MTcxMDI5ODgsImV4cCI6MTcxNzEwNDc4OH0.14aIRB9L4hX8xlCaKdIdt_aCt7cA3CyGxW5owqPIf7U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"borrowerName\":\"John Doe\",\r\n\"borrowingDate\":\"2024-05-30\",\r\n\"borrowingTime\":\"08:00:00\",\r\n\"isbn\":\"ESBN123496909\",\r\n\"title\":\"Generative AI\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/api/addNewBorrowing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"api",
+						"addNewBorrowing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "returnBorrowing",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxhbG0iLCJpYXQiOjE3MTcwOTY5ODksImV4cCI6MTcxNzA5ODc4OX0.ViEC4UMuphCcWkSR-30wY4aAdDT6Gr-TfdUDhl-va38",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/api/returnBorrowing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"api",
+						"returnBorrowing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxhbG0iLCJpYXQiOjE3MTcwOTYxMTksImV4cCI6MTcxNzA5NzkxOX0.amtXTpggr4Wlfhk-hdFUIHEyq7WsNsL5xTEgiD_ci5Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 16,\r\n    \"title\": \"Generative AI2\",\r\n    \"isbn\": \"ESBN123456566\",\r\n    \"auther\": \"jalal\",\r\n    \"year\": \"2023\",\r\n    \"createdBy\": \"jalalm\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/api/updateBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"api",
+						"updateBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxhbG0iLCJpYXQiOjE3MTcwOTQwOTYsImV4cCI6MTcxNzA5NTg5Nn0.IyczKI74poBmZ32rQbU48-9Psw6FZN3EMkwpwLDb5J4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"Generative AI2\",\r\n    \"isbn\": \"ESBN123456566\",\r\n    \"auther\": \"jalal\",\r\n    \"year\": \"2023\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/api/deleteBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"api",
+						"deleteBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generateToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"jalal\",\r\n\"password\":\"123456\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/generateToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"generateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userProfile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxhbG0iLCJpYXQiOjE3MTcwOTIxNzMsImV4cCI6MTcxNzA5Mzk3M30.Psr1fcqG7LP8x_rCISiqyptAw06r2wjepBVnUYRJQNA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/api/userProfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"api",
+						"userProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxhbG0iLCJpYXQiOjE3MTcwOTIxNzMsImV4cCI6MTcxNzA5Mzk3M30.Psr1fcqG7LP8x_rCISiqyptAw06r2wjepBVnUYRJQNA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/api/search?title=Generative AI",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Generative AI"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBorrowing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWxhbG0iLCJpYXQiOjE3MTcxMDI5ODgsImV4cCI6MTcxNzEwNDc4OH0.14aIRB9L4hX8xlCaKdIdt_aCt7cA3CyGxW5owqPIf7U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/api/getAllBorrowing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"api",
+						"getAllBorrowing"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
