@@ -21,6 +21,8 @@ public class Book {
     private String isbn;
     private String auther;
     private String year;
+    private String createdBy;
+    private String updatedBy;
     
 	public int getId() {
 		return id;
@@ -51,5 +53,17 @@ public class Book {
 	}
 	public void setYear(String year) {
 		this.year = year;
+	}
+	public String getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
 	}
 }
