@@ -32,6 +32,7 @@ public class UserController {
         /*
          * This API works like a registration function
          * Therefore, It is permitted to all without authentication
+         * Comment
          */
     	return service.addUser(userInfo);
     }
